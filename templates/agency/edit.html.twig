@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'agencies-edit' %}
+{% block body_class 'agencies' %}
+{% block page_title 'agencies.edit_agency'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('agency_index') }}">{{ 'agencies'|trans }}</a>
+    <a href="{{ path('agency_edit', {id: agency.id}) }}">{{ agency.name }}</a>
+    <span>{{ 'agencies.edit_agency'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    {{ form_start(form) }}
+    {{ include('agency/_form.html.twig', {'form_title': 'agencies.edit_agency'|trans}) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('agencyIndex') }}
+{% endblock %}

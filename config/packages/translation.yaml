@@ -1,0 +1,10 @@
+framework:
+    default_locale: '%locale%'
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks:
+            - '%locale%'
+
+bazinga_js_translation:
+    locale_fallback: "%locale%"
+    default_domain: messages

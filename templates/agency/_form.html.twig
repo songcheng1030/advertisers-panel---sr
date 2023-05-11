@@ -1,0 +1,56 @@
+<div class="panel panel-half panel-icon-header">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ form_title|default('agencies.new_agency'|trans) }}</h4>
+        <button type="button" class="toggle"></button>
+    </div>
+    <div class="panel-body">
+        {{ form_row(form.name) }}
+        {{ form_row(form.type) }}
+        {{ form_row(form.salesManager) }}
+        {{ form_row(form.rebate) }}
+        {{ form_row(form.countries) }}
+    </div>
+</div>
+<div class="panel panel-half panel-icon-header">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ 'agencies.account_manager'|trans }}</h4>
+        <button type="button" class="toggle"></button>
+    </div>
+    <div class="panel-body">
+        {{ form_row(form.accountManagerName) }}
+        {{ form_row(form.accountManagerEmail) }}
+        {{ form_row(form.accountManagerPhone) }}
+        <div class="js-managers-container" data-counter="0">
+            {% for manager in form.account_manager %}
+                <div style="margin-bottom: 20px" class="js_agency_manager_container">
+                    <hr>
+                    {{ form_widget(manager) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="form-field" style="text-align: right">
+            <button type="button" class="btn btn-add-gray js-add-account-manager"
+                    formnovalidate="formnovalidate">{{ 'agencies.add_account_manager.label' | trans }}<span
+                        class="icon"></span></button>
+        </div>
+    </div>
+</div>
+<div class="panel panel-half panel-icon-header panel-account">
+    <div class="panel-header">
+        <h4><span class="icon profile"></span>{{ 'agencies.billing_details'|trans }}</h4>
+        <button type="button" class="toggle"></button>
+    </div>
+    <div class="panel-body">
+        {{ form_row(form.billingFiscalState) }}
+        {{ form_row(form.billingNifCif) }}
+        {{ form_row(form.billingCompany) }}
+        {{ form_row(form.billingCountry) }}
+        {{ form_row(form.billingCity) }}
+        {{ form_row(form.billingProvince) }}
+        {{ form_row(form.billingCp) }}
+        {{ form_row(form.billingAddress) }}
+        {{ form_row(form.details) }}
+        <hr>
+        {{ include('_save_button.html.twig') }}
+    </div>
+</div>

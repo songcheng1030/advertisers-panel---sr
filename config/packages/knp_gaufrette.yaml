@@ -1,0 +1,37 @@
+knp_gaufrette:
+  stream_wrapper: ~
+  adapters:
+    picture_adapter:
+      aws_s3:
+        service_id: ct_file_store.s3
+        bucket_name: '%env(AWS_S3_BUCKET_UPLOADS)%'
+        detect_content_type: true
+        options:
+          create: true
+          directory: profile
+          acl: 'public-read'
+    screenshot_adapter:
+      aws_s3:
+        service_id: ct_file_store.s3
+        bucket_name: '%env(AWS_S3_BUCKET_UPLOADS)%'
+        detect_content_type: true
+        options:
+          create: true
+          directory: screenshot
+          acl: 'public-read'
+    videos_adapter:
+      aws_s3:
+        service_id: ct_file_store.s3
+        bucket_name: '%env(AWS_S3_BUCKET_UPLOADS)%'
+        detect_content_type: false
+        options:
+          create: true
+          directory: video
+          acl: 'public-read'
+  filesystems:
+    pictures_fs:
+      adapter: picture_adapter
+    screenshot_fs:
+      adapter: screenshot_adapter
+    videos_fs:
+      adapter: videos_adapter

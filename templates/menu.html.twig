@@ -1,0 +1,145 @@
+{% block nav_menu %}
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="{% if 'reports' in current_route %}active{% endif %}">
+                <a href="{{ path('reports') }}">
+                    <span class="icon reports"></span>
+                    <span>{{ 'reports'|trans }}</span>
+                </a>
+            </li>
+            {% if is_granted('ROLE_SALES_MANAGER') %}
+                <li class="has-sub{% if 'campaign' in current_route %} active{% endif %}">
+                    <a href="javascript:void(0)">
+                        <span class="icon campaigns"></span>
+                        <span>{{ 'campaigns'|trans }}</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="{% if (current_route == 'campaign_index') %}active{% endif %}">
+                            <a href="{{ path('campaign_index') }}">
+                                <span class="icon campaigns"></span>
+                                <span>{{ 'campaigns'|trans }}</span>
+                            </a>
+                        </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="{% if (current_route == 'campaign_new') %}active{% endif %}">
+                                <a href="{{ path('campaign_new') }}">
+                                    <span class="icon add"></span>
+                                    <span>{{ 'campaigns.add_campaign'|trans }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+                <li class="has-sub{% if 'agency' in current_route %} active{% endif %}">
+                    <a href="javascript:void(0)">
+                        <span class="icon agencies"></span>
+                        <span>{{ 'agencies'|trans }}</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="{% if (current_route == 'agency_index') %}active{% endif %}">
+                            <a href="{{ path('agency_index') }}">
+                                <span class="icon agencies"></span>
+                                <span>{{ 'agencies'|trans }}</span>
+                            </a>
+                        </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="{% if (current_route == 'agency_new') %}active{% endif %}">
+                                <a href="{{ path('agency_new') }}">
+                                    <span class="icon add-user"></span>
+                                    <span>{{ 'agencies.add_agency'|trans }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="has-sub{% if 'advertiser' in current_route %} active{% endif %}">
+                    <a href="javascript:void(0)">
+                        <span class="icon advertisers"></span>
+                        <span>{{ 'advertisers'|trans }}</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="{% if (current_route == 'advertiser_index') %}active{% endif %}">
+                            <a href="{{ path('advertiser_index') }}">
+                                <span class="icon advertisers"></span>
+                                <span>{{ 'advertisers'|trans }}</span>
+                            </a>
+                        </li>
+                        <li class="{% if (current_route == 'advertiser_new') %}active{% endif %}">
+                            <a href="{{ path('advertiser_new') }}">
+                                <span class="icon add-user"></span>
+                                <span>{{ 'advertisers.add_advertiser'|trans }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub{% if 'dsp' in current_route %} active{% endif %}">
+                    <a href="javascript:void(0)">
+                        <span class="icon dsps"></span>
+                        <span>{{ 'dsps'|trans }}</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="{% if (current_route == 'dsp_index') %}active{% endif %}">
+                            <a href="{{ path('dsp_index') }}">
+                                <span class="icon dsps"></span>
+                                <span>{{ 'dsps'|trans }}</span>
+                            </a>
+                        </li>
+                        <li class="{% if (current_route == 'dsp_new') %}active{% endif %}">
+                            <a href="{{ path('dsp_new') }}">
+                                <span class="icon add"></span>
+                                <span>{{ 'dsps.add_dsp'|trans }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_SALES_MANAGER_HEAD') %}
+                <li class="has-sub{% if 'user' in current_route %} active{% endif %}">
+                    <a href="javascript:void(0)">
+                        <span class="icon users"></span>
+                        <span>{{ 'users'|trans }}</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="{% if (current_route == 'user_index') %}active{% endif %}">
+                            <a href="{{ path('user_index') }}">
+                                <span class="icon user-list"></span>
+                                <span>{{ 'users'|trans }}</span>
+                            </a>
+                        </li>
+                        <li class="{% if (current_route == 'user_new') %}active{% endif %}">
+                            <a href="{{ path('user_new') }}">
+                                <span class="icon add-user"></span>
+                                <span>{{ 'users.add_user'|trans }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_DEMO') %}
+                <li class="has-sub{% if 'demo' in current_route %} active{% endif %}">
+                    <a href="javascript:void(0)">
+                        <span class="icon campaigns"></span>
+                        <span>{{ 'Demo'|trans }}</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="{% if (current_route == 'demo_index') %}active{% endif %}">
+                            <a href="{{ path('demo_index') }}">
+                                <span class="icon campaigns"></span>
+                                <span>{{ 'demos'|trans }}</span>
+                            </a>
+                        </li>
+                        <li class="{% if (current_route == 'demo_new') %}active{% endif %}">
+                            <a href="{{ path('demo_new') }}">
+                                <span class="icon add"></span>
+                                <span>{{ 'demo.add_demo'|trans }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

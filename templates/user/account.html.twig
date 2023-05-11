@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'users_account' %}
+{% block body_class 'users' %}
+{% block page_title 'users.edit_user'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('user_index') }}">{{ 'users'|trans }}</a>
+    <span>{{ 'users.edit_user'|trans }}</span>
+{% endblock %}
+
+
+{% form_theme form 'fields.html.twig' %}
+
+
+
+{% block main %}
+
+    <div class="panel panel-half panel-icon-header panel-account">
+        {{ form_start(form) }}
+        <div class="panel-header">
+            <h4><span class="icon profile"></span>{{ 'users.edit_user'|trans }}</h4>
+        </div>
+        <div class="panel-body">
+            <div class="main-info">
+                <div class="img-wrapper">
+                    {% if user.picture is not null %}
+                        <div class="img" id="profile-picture"
+                             style="background-image: url({{ asset(user.picture) }});"></div>
+                    {% else %}
+                        <div class="img" id="profile-picture"
+                             style="background-image: url({{ asset('build/images/default-profile.png') }});"></div>
+                    {% endif %}
+                    <div class="img-hover js-btn-cropper">
+                        <p>{{ 'users.user_property.load_picture' | trans }}</p>
+                    </div>
+                </div>
+                <div class="name-wrapper">
+                    <h3>{{ user.fullName }}</h3>
+                    <p>{{ 'users.user_property.last_login' | trans }} {{ user.lastLogin | date("d.m.Y") }}
+                        / {{ user.lastLogin | date("H:i:s") }}</p>
+                </div>
+            </div>
+            <div class="secondary-info">
+                <hr>
+            </div>
+            {{ form_row(form.username) }}
+            {{ form_row(form.nick) }}
+            {{ form_row(form.plainPassword) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.lastName) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.locale) }}
+            {{ form_row(form.picture) }}
+            {{ form_row(form._token) }}
+            {{ include('_save_button.html.twig') }}
+
+        </div>
+    </div>
+
+{% endblock %}

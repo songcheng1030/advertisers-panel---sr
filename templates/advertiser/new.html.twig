@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'advertisers-add' %}
+{% block body_class 'advertisers' %}
+{% block page_title 'advertisers.add_advertiser'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('advertiser_index') }}">{{ 'advertisers'|trans }}</a>
+    <span>{{ 'advertisers.add_advertiser'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    <div class="panel panel-half panel-icon-header">
+        <div class="panel-header">
+            <h4><span class="icon edit"></span>{{ 'advertisers.new_advertiser'|trans }}</h4>
+        </div>
+        <div class="panel-body">
+            {{ include('advertiser/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('advertiserIndex') }}
+{% endblock %}

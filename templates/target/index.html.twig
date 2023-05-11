@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'target_index' %}
+{% block body_class 'targets' %}
+{% block page_title 'targets'|trans %}
+{% block page_subtitle 'targets.target_list'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('user_edit', {id: user_id}) }}">{{ user_full_name }}</a><span>{{ 'targets'|trans }}</span>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-table">
+        <div class="panel-list panel-table flex-table">
+            <div class="panel-body">
+                <div class="table-container">
+                    <table class="js-targets-table display">
+                        <thead>
+                        <tr>
+                            <th class="sortable hidden">{{ 'common.id'|trans }}</th>
+                            <th class="sortable">{{ 'common.goal'|trans }}</th>
+                            <th class="sortable">{{ 'common.reached'|trans }}</th>
+                            <th class="sortable">{{ 'common.month'|trans }}</th>
+                            <th class="sortable">{{ 'common.year'|trans }}</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('targetIndex') }}
+{% endblock %}

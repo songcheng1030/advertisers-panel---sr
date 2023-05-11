@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+{{ form_row(form.name) }}
+{% if not has_user %}
+    <div class="form-field create-user">
+        <div class="switch-field">
+            <label for="create-user">{{ 'advertisers.create_user_with_access'|trans }}</label>
+            <label for="create-user">
+                {{ form_widget(form.createUser,{ 'id': 'create-user' }) }}
+                <span class="switch"></span>
+                <span class="toggle-switch"></span>
+            </label>
+        </div>
+    </div>
+    <div class="dependent-fields js-only-create-user">
+        {{ form_row(form.email) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.plainPassword) }}
+        {{ form_row(form.locale) }}
+    </div>
+{% else %}
+    {{ form_row(form.email) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.plainPassword) }}
+    {{ form_row(form.locale) }}
+{% endif %}
+{{ include('_save_button.html.twig') }}
+{{ form_end(form) }}

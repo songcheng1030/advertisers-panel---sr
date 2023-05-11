@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'campaigns-edit' %}
+{% block body_class 'campaigns' %}
+{% block page_title 'campaigns.edit_campaign'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('campaign_index') }}">{{ 'campaigns'|trans }}</a>
+    <a href="{{ path('campaign_edit', {id: campaign.id}) }}">{{ campaign.name }}</a>
+    <span>{{ 'campaigns.edit_campaign'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    {{ form_start(form) }}
+    {{ include('campaign/_form.html.twig', {'form_title': 'campaigns.main_info'|trans}) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('campaignIndex') }}
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="popup-container popup-delete popup-pause-campaign">
+    <div class="popup-body">
+        <div class="info align-center">
+            <span class="icon pause"></span>
+            <p>{{ 'confirmation.pause_campaign'|trans }}</p>
+            <p></p>
+        </div>
+        <div class="form-field">
+            <div class="align-center">
+                <button class="btn btn-square close-btn">{{ 'common.cancel'|trans }}</button>
+                {{ include('campaign/_pause_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>

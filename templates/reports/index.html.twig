@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body_id 'reports' %}
+{% block page_title '' %}
+{% block page_subtitle '' %}
+
+
+{% block breadcrumb %}
+<a href="{{ path('reports') }}">{{ 'reports'|trans }}</a>
+{% endblock %}
+
+
+{% block xtra_stylesheets %}
+{{ encore_entry_link_tags('reports') }}
+{% endblock %}
+
+{% block main %}
+<div class="wrapper">
+    <input type="hidden" id="current-symfony-environment" value="{{ app.environment }}" />
+    <input type="hidden" id="locale" value="{{ app.user.locale }}" />
+    <input type="hidden" id="user-should-show-only-own-stats" value="0" />
+    <input type="hidden" id="user-is-admin" value="{{ app.user.isAdmin }}" />
+    <input type="hidden" id="user-is-sales-manager-head" value="{{ app.user.isSalesManagerHead }}" />
+    <input type="hidden" id="user-is-advertiser" value="{{ app.user.isAdvertiser }}" />
+    <input type="hidden" id="user-cards-info-objective" value="{{ cards_info.objective|default(0) }}" />
+    <input type="hidden" id="user-cards-info-revenue" value="{{ cards_info.revenue|default(0) }}" />
+    <input type="hidden" id="user-cards-info-impressions" value="{{ cards_info.impressions|default(0) }}" />
+    <input type="hidden" id="user-cards-info-active_deals" value="{{ cards_info.activeDeals|default(0) }}" />
+    <!--<input type="hidden" id="user-cards-info-viewability" value="{{ cards_info.viewability|default(0) }}"/>-->
+    <input type="hidden" id="user-cards-info-active_direct_campaigns"
+        value="{{ cards_info.activeDirectCampaigns|default(0) }}" />
+    <div>
+        <reports>
+        <!--vue-ssr-outlet-->
+        </reports>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% block agencies_row %}
+    <div class="form-field {% if form_errors(form) is not empty %}error{% endif %}">
+        {{ form_label(form) }}
+        <div class="dropdown form">
+            <input type="hidden" name="{{ full_name }}" id="{{ id }}" {% if value is not empty %}{% for child in choices %}{% if child is selectedchoice(value) %} value="{{ child.value }}"{% endif %}{% endfor %}{% endif %}>
+            <button type="button">{% if value is not empty %}{% for child in choices %}{% if child is selectedchoice(value) %}{{ child.label }}{% endif %}{% endfor %}{% else %}Selecciona{% endif %}</button>
+            <ul class="dropdown-menu js-agencies js_campaign_agency agency">
+                <li class="js-search-item">
+                    <input class="search js-search-agencies" type="text"
+                           placeholder="{{ 'agencies.filter.placeholder'|trans }}">
+                </li>
+                {% for child in choices %}
+                    <li{% if child is selectedchoice(value) %} class="selected"{% endif %}><a href="#" data-value="{{ child.value }}">{{ child.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}

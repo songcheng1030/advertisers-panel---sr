@@ -1,0 +1,25 @@
+common:
+  field_must_be_completed: Debe completar este campo
+  field_must_be_selected: Debe seleccionar este campo
+  field_does_not_contain_valid_url: Este campo no contiene una url válida
+  site_can_not_be_accessed: No se puede acceder a este sitio
+  field_already_exist: Campo ya existe
+  password_not_match: La contraseña y su confirmación no coinciden
+  field_min_message: El campo debe tener al menos {{ limit }} caracteres
+  field_max_message: El campo no puede tener mas de {{ limit }} caracteres
+  field_exact_message: Este campo debería tener exactamente {{ limit }} caracteres
+  please_upload_valid_files: Por favor subir archivos TXT, CSV, XLS validos
+  must_be_unique_by_ssp: El campo debe ser único por SSP
+  date_must_be_after_the_current_date: Fecha debe ser igual o posterior a la fecha actual
+  date_must_be_after_start_date: Fecha debe ser igual o posterior a la fecha de inicio
+  field_more_or_equal_one_message: Campo debe ser mayor o igual a 1
+  field_less_or_equal_one_hundred_message: Campo debe ser menor o igual a 100
+
+  supply_source_desktop_is_null: Por favor llene uno de estos campos
+  supply_source_mobile_is_null: Por favor llene uno de estos campos
+  demo_validation_desk_mob: Alguno de los campos debe estar activo
+  demo_url_is_null: Este campo es requerido
+  demo_validation_click_url_invalid: ingrese una URL valida
+
+users:
+  password.invalid_message: Contraseña y Repetir Contraseña deben coincidir.

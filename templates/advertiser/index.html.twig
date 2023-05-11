@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'advertiser_index' %}
+{% block body_class 'advertisers' %}
+{% block page_title 'advertisers'|trans %}
+{% block page_subtitle 'advertisers.advertiser_list'|trans %}
+
+{% block extra_buttons %}
+    <a href="{{ path('advertiser_new') }}" class="btn btn-square btn-add"><span
+                class="icon"></span>{{ 'advertisers.add_advertiser'|trans }}</a>
+{% endblock %}
+
+{% block breadcrumb %}
+    <a href="{{ path('advertiser_index') }}">{{ 'advertisers'|trans }}</a>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-table">
+        <div class="panel-list panel-table flex-table">
+            <div class="panel-body">
+                <div class="table-container">
+                    <table class="js-advertisers-table display">
+                        <thead>
+                        <tr>
+                            <th class="sortable">{{ 'common.name'|trans }}</th>
+                            <th class="sortable">{{ 'common.user'|trans }}</th>
+                            <th class="sortable">{{ 'common.email'|trans }}</th>
+                            <th>{{ 'common.options'|trans }}</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('advertiserIndex') }}
+{% endblock %}

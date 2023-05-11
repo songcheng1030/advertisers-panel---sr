@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'agencies-show' %}
+{% block body_class 'agencies' %}
+{% block page_title 'agencies.show_agency'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('agency_index') }}">{{ 'agencies'|trans }}</a>
+    <span>{{ 'agencies.show_agency'|trans }}</span>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-half panel-icon-header">
+        <div class="panel-body">
+            <div class="form-field">
+                <label for="agency_name">{{ 'common.name'|trans }}</label>
+                <input id="agency_name" disabled="disabled" type="text" value="{{ agency.name }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_type">{{ 'common.type'|trans }}</label>
+                <input id="agency_type" disabled="disabled" type="text"
+                       value="{{ agencyTypeNames[agency.type]|trans }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_rebate">{{ 'common.rebate.label'|trans }}</label>
+                <input id="agency_rebate" disabled="disabled" type="text" value="{{ agency.rebate }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_nif_cif">{{ 'agencies.nif_cif.label'|trans }}</label>
+                <input id="agency_nif_cif" disabled="disabled" type="text" value="{{ agency.billingNifCif }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_company">{{ 'agencies.company.label'|trans }}</label>
+                <input id="agency_company" disabled="disabled" type="text" value="{{ agency.billingCompany }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_city">{{ 'agencies.city.label'|trans }}</label>
+                <input id="agency_city" disabled="disabled" type="text" value="{{ agency.billingCity }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_province">{{ 'agencies.province.label'|trans }}</label>
+                <input id="agency_province" disabled="disabled" type="text" value="{{ agency.billingProvince }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_cp">{{ 'agencies.cp.label'|trans }}</label>
+                <input id="agency_cp" disabled="disabled" type="text" value="{{ agency.billingCp }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_address">{{ 'agencies.address.label'|trans }}</label>
+                <input id="agency_address" disabled="disabled" type="text" value="{{ agency.billingAddress }}">
+            </div>
+            <div class="form-field">
+                <label for="agency_details">{{ 'agencies.details.label'|trans }}</label>
+                <textarea id="agency_details" disabled="disabled">{{ agency.details }}</textarea>
+            </div>
+            <div>
+                {% for manager in agency.accountManager %}
+                    <div class="manager_container">
+                        <hr>
+                        <div class="form-field">
+                            <label for="manager_{{ loop.index }}_name">{{ 'common.name'|trans }}</label>
+                            <input id="manager_{{ loop.index }}_name" disabled="disabled" type="text"
+                                   value="{{ manager.name }}">
+                        </div>
+                        <div class="form-field">
+                            <label for="manager_{{ loop.index }}_email">{{ 'common.email'|trans }}</label>
+                            <input id="manager_{{ loop.index }}_email" disabled="disabled" type="text"
+                                   value="{{ manager.email }}">
+                        </div>
+                        <div class="form-field">
+                            <label for="manager_{{ loop.index }}_phone">{{ 'common.phone.label'|trans }}</label>
+                            <input id="manager_{{ loop.index }}_phone" disabled="disabled" type="text"
+                                   value="{{ manager.phone }}">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

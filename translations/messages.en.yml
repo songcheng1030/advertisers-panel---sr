@@ -1,0 +1,407 @@
+common.write_your_username: Write your username
+common.write_your_password: Write your password
+common.name: Name
+common.options: Options
+common.paginator.info: Showing _START_ to _END_ of _TOTAL_ %entity%
+common.paginator.empty_info: Showing 0 to 0 of 0  %entity%
+common.mandatory_fields: Remember that all fields are mandatory.
+common.save: Save
+common.update: Update
+common.cancel: Cancel
+common.no: No
+common.yes: Yes
+common.date_format: MM/dd/yyyy
+common.date: Date
+common.from: From
+common.to: To
+common.today: Today
+common.yesterday: Yesterday
+common.last_week: Last seven days
+common.current_month: Current month
+common.last_month: Past month
+common.custom_date: Custom date
+common.last_30_days: Last 30 days
+common.apply: Apply
+common.edit: Edit
+common.hide: Hide
+common.save_changes: Save changes
+common.upload: Upload
+common.type: Type
+common.sales_manager: Sales Manager
+common.country: Country
+common.username: Username
+common.user: User
+common.email: Email
+common.role: Role
+common.select_at_least_one: Select at least one
+common.select: Select...
+common.field_must_be_completed: Field must be completed
+common.field_must_contain_a_number: Field must contain a number
+common.field_must_be_selected: Field must be selected
+common.field_does_not_contain_valid_url: Field does not contain a valid url
+common.site_can_not_be_accessed: Site can not be accessed
+common.field_already_exist: Field already exist
+common.password_not_match: Password and confirmation does not match
+common.agency: Agency
+common.status: Status
+common.ssp: SSP
+common.enter_name_and_hit_create_to_create: Enter name and hit Enter to create
+common.previous: Previous
+common.next: Next
+common.deal_id: deal ID
+common.filter: Filter
+common.confirm: Confirmar
+
+common.empty_table: No data available in table
+common.goal: Goal
+common.reached: Reached
+common.month: Month
+common.year: Year
+common.user_not_active: Usuario no activo
+
+common.name.label: Name
+common.name.placeholder: Enter name
+common.rebate.label: Rebate
+common.rebate.placeholder: Enter rebate
+common.email.label: Email
+common.email.placeholder: Enter email
+common.phone.label: Phone
+common.phone.placeholder: Enter phone
+common.delete_manager.label: Delete account manager
+common.agency.label: Agency
+common.advertiser.label: Advertiser
+common.ssp.label: SSP
+common.type.label: Type
+common.deal_id.label: Deal ID
+common.deal_id.placeholder: Enter Deal ID
+common.dsp.label: DSP
+common.vtr.label: VTR
+common.vtr.placeholder: Enter VTR
+common.viewability.label: Viewability
+common.viewability.placeholder: Enter Viewability
+common.ctr.label: CTR
+common.ctr.placeholder: Enter CTR
+common.volume.label: Volume
+common.volume.placeholder: Enter Volume
+common.list_type.label: List type
+common.cpm.label: CPM
+common.cpm.placeholder: Enter CPM
+common.start_at.label: Start date
+common.end_at.label: End date
+common.status.label: Status
+common.active: Active
+common.paused: Paused
+common.archived: Archived
+common.white_list: White list
+common.black_list: Black list
+common.list.label: List
+common.cost_type.label: Cost type
+common.cpv.label: CPV
+common.cpv.placeholder: Enter CPV
+common.id: ID
+
+common.url: URL
+common.format: Format
+common.supply_source_desktop: Supply source Desktop
+common.supply_source_mobile: Supply source Mobile
+common.video: Video
+
+agencies.filter.placeholder: Filter agencies
+
+demos: Demos
+demo-add: New Demo
+demo.add_demo: Add Demo
+demo.edit_demo: Edit Demo
+demo.demo_list: Demos List
+demo.click: Open Link
+demo.desktop: Desktop
+demo.mobile: Mobile
+
+
+demo.url_format.label: Url Format
+demo.url.label: URL
+demo.url.placeholder: Enter the URL
+demo.format.label: Format
+demo.format.placeholder: Enter the Format
+demo.supply_source_desktop.label: Supply source Desktop
+demo.supply_source_desktop.placeholder: Enter the Supply source Desktop
+demo.supply_source_mobile.label: Supply source Mobile
+demo.supply_source_mobile.placeholder: Enter the Supply source Mobile
+demo.copy: Copy Link
+demo.copied: Copied
+demo.preview_url: Preview Link
+demo.copiedUrlMessage: URL Copied to the clipboard
+demo.default: Default value
+demo.width.placeholder: Enter the width
+demo.height.placeholder: Enter the height
+demo.status.label: Status
+demo.status.placeholder: Status
+demo.video.label: Video
+demo.video.placeholder: Video
+demo.status.0: Pending
+demo.status.1: Ready
+demo.status.2: Procesing
+demo.status.3: Pending
+demo.status.4: Error
+demo.status.5: Updating
+demo.orientation.label: Orientation
+
+advertisers: Advertisers
+advertisers.add_advertiser: Add Advertiser
+advertisers.advertiser_list: Advertisers List
+advertisers.edit_advertiser: Edit advertiser
+advertisers.delete_advertiser: Delete advertiser
+advertisers.new_advertiser: New advertiser
+advertisers.create_user_with_access: Create user with access
+advertisers.simulate: Simulate advertiser
+advertisers.name_must_be_provided: Name must be provided
+
+dsps: Dsps
+dsps.add_dsp: Add Dsp
+dsps.dsp_list: Dsps List
+dsps.edit_dsp: Edit dsp
+dsps.delete_dsp: Delete dsp
+dsps.new_dsp: New dsp
+
+confirmation.delete_advertiser: Are you sure to delete the advertiser?
+confirmation.delete_dsp: Are you sure to delete the DSP?
+confirmation.delete_user: Are you sure to delete the user?
+confirmation.archive_agency: Are you sure to archive the agency?
+confirmation.archive_campaign: Are you sure to archive the campaign?
+confirmation.clone_campaign: Are you sure to clone the campaign?
+confirmation.activate_campaign: Are you sure to activate the campaign?
+confirmation.pause_campaign: Are you sure to pause the campaign?
+
+action_modal.success: Your changes have been made correctly
+action_modal.error: Ops, the changes have not been saved correctly
+action_modal.warning: There are unsaved changes. Please remember to save before leaving the page
+action_modal.forbidden: You are not allowed to access the resource
+
+reports: Reports
+reports.today_live: Stats
+reports.today_live.sub: Statistics so far this day and more!
+reports.formatloads: Format Loads
+reports.formatloads_fill: Fillrate
+reports.formatloads.blob: Number of Format Loads received during the day
+reports.opportunities: Opportunities
+reports.opportunities.blob: Opportunities generated during the day
+reports.impressions: Impressions
+reports.impressions.card: Served impressions today
+reports.impressions.blob: Impressions purchased
+reports.revenue: Revenue
+reports.revenue_advertiser: Spent
+reports.revenue_admin: Month revenue
+reports.revenue.blob: Generated Revenue
+reports.vtr: VTR
+reports.vtr.blob: Percentage of videos viewed completely
+reports.ctr: CTR
+reports.request: Request
+reports.country: Country
+reports.campaign_name: Campaign name
+reports.sales_manager: Sales manager
+reports.type: Type
+reports.deal_id: Deal ID
+reports.advertiser: Advertiser
+reports.agency: Agency
+reports.dsp: DSP
+reports.ssp: SSP
+reports.objective: Objective
+reports.objective.help: Achieved revenue this month
+reports.objective.help_advertiser: Achieved revenue over expected objective of this month
+reports.impressions.help: Served impressions today
+reports.active_deals.help: Deals with impressions today
+reports.viewability.help: Viewability of your campaigns today
+reports.active_deals: Active deals
+reports.active_direct_campaigns: Active direct campaigns
+reports.active_direct_campaigns.help: Direct campaigns with impressions today
+reports.viewability: Viewability
+reports.bids: Bid response
+reports.rebate_percent: "% Rebate"
+reports.rebate_cost: Rebate cost
+reports.net_revenue: Net revenue
+reports.completion.card: Completion objective percent
+reports.completion.help: Achieved objective percentage
+reports.viewable_impressions: Viewable impressions
+reports.viewability_percent: "% Viewability"
+reports.clicks: Clicks
+reports.complete_views: Complete views
+reports.viewed25: 25% Viewed
+reports.viewed50: 50% Viewed
+reports.viewed75: 75% Viewed
+reports.25perc: 25%
+reports.50perc: 50%
+reports.75perc: 75%
+reports.cpm: CPM
+reports.media_cost: Media Cost
+reports.extraprima_cost: Extraprima Cost
+reports.profit: Profit
+reports.profit_margin: "% Profit"
+reports.registers: Registers
+reports.generate.title: Create new report
+reports.generate.run: Run report
+reports.generate.runcsv: Run to CSV
+reports.generate.shareurl: Share report
+reports.generate.copiedurl: Copied URL to clipboard
+reports.generate.overall: Overall Report
+reports.generate.monthly: Monthly Report
+reports.generate.daily: Daily Report
+reports.generate.hourly: Hourly Report
+reports.generate.date: Date
+reports.generate.from: From
+reports.generate.to: To
+reports.generate.country: Country
+reports.generate.campaign_name: Campaign
+reports.generate.campaign_name_no_adv: Deal
+reports.generate.sales_manager: Sales manager
+reports.generate.type: Type
+reports.generate.deal_id: Deal ID
+reports.generate.advertiser: Advertiser
+reports.generate.agency: Agency
+reports.generate.dsp: DSP
+reports.generate.ssp: SSP
+reports.generate.domain: Domain
+reports.generate.dimension: Dimension
+reports.generate.supply: Supply
+reports.generate.supply_source: Supply Source
+reports.generate.supply_partner: Supply Partner
+reports.generate.metrics: Metric
+reports.generate.metrics_selected: Metrics selected
+reports.generate.unselect_all: Unselect all
+reports.generate.drag_to_reorder: Drag to reorder
+reports.generate.at_least_one_metric: At least one metric is required to run a report. Select from available metrics below
+reports.generate.unselected_metrics: Unselected Metrics
+reports.generate.select_all: Select all
+reports.generate.filters: Filters
+reports.generate.include: Include
+reports.generate.exclude: Exclude
+reports.generate.search: Search
+reports.generate.contains: contains
+reports.generate.starts_with: starts with
+reports.generate.ends_with: ends with
+reports.generate.exact_match: exact match
+reports.generate.add: Add
+reports.generate.other: Other
+reports.generate.environment: Device
+reports.generate.publisher_manager: PM
+reports.generate.full_publisher_manager: Publisher Manager
+reports.error.monthly_report_more_6_months: You cannot request a Monthly Report of more than 6 months.
+reports.error.daily_report_more_60_days: You cannot request a Daily Report of more than 60 days.
+reports.error.hourly_report_more_3_days: You cannot request an Hourly Report of more than 3 days.
+reports.error.incorrect_range: The selected range is before the minimum date or after the maximum available.
+reports.error.general_error: An error happens while processing your request.
+reports.filters.contains: "*%filter%* (contains)"
+reports.filters.begins: "%filter%* (begins with)"
+reports.filters.ends: "*%filter% (ends with)"
+reports.filters.exact: "%filter% (exact match)"
+reports.total_row_with_filters: Total (filters applied)
+reports.total_row_without_filters: Total (no filters)
+reports.pagination.5: 5 per page
+reports.pagination.10: 10 per page
+reports.pagination.20: 20 per page
+reports.pagination.25: 25 per page
+reports.pagination.50: 50 per page
+reports.pagination.100: 100 per page
+reports.pagination.200: 200 per page
+reports.pagination.500: 500 per page
+
+users: Users
+users.password.invalid_message: Password and repeat password must match
+users.password.first_options.label: Password
+users.password.first_options.placeholder: Enter new password
+users.password.second_options.label: Repeat password
+users.password.second_options.placeholder: Repeat the password
+users.role.advertiser: Advertiser
+users.role.admin: Admin
+users.role.agency: Agency
+users.role.sales_manager: Sales Manager
+users.role.sales_manager_head: Sales Manager Head
+users.role.campaign_viewer: Campaign viewer
+users.role.label: Role
+users.username.label: Username
+users.username.placeholder: Enter username
+users.name.label: Name
+users.name.placeholder: Enter name
+users.last_name.label: Lastname
+users.last_name.placeholder: Enter lastname
+users.nick.label: Nick
+users.nick.placeholder: Enter nick
+users.email.label: Email
+users.email.placeholder: Enter email
+users.locale.label: Language
+users.add_user: Add user
+users.edit_user: Edit user
+users.delete_user: Delete user
+users.new_user: New user
+users.user_list: User list
+users.create_user: Create user
+users.user_property.load_picture: Update picture
+users.user_property.last_login: Last login
+users.simulate.not_allowed: Double simulation is now allowed. Please finish current simulation first.
+users.simulate: Simulate user
+users.is_email_notification_enabled.label: Add in notification mail
+
+agencies: Agencies
+agencies.add_agency: Add agency
+agencies.new_agency: New agency
+agencies.agency_list: Agency list
+agencies.type.agency: Agency
+agencies.type.network: Network
+agencies.type.direct_advertiser: Direct advertiser
+agencies.add_account_manager.label: Add account manager
+agencies.fiscal_state.label: Fiscal State
+agencies.nif_cif.label: NIF/CIF
+agencies.nif_cif.placeholder: Enter NIF/CIF
+agencies.company.label: Company
+agencies.company.placeholder: Enter Company
+agencies.country.label: Country
+agencies.city.label: City
+agencies.city.placeholder: Enter City
+agencies.province.label: Provincia
+agencies.province.placeholder: Enter Province
+agencies.cp.label: CP
+agencies.cp.placeholder: Enter CP
+agencies.address.label: Address
+agencies.address.placeholder: Enter Address
+agencies.details.label: Details
+agencies.details.placeholder: Enter Details
+agencies.account_manager: Account Manager
+agencies.billing_details: Billing Details
+agencies.edit_agency: Edit agency
+agencies.archive_agency: Archive agency
+agencies.show_agency: Show agency
+agencies.type.deal: Deal
+agencies.type.campaign: Campaign
+
+campaigns: Campaigns
+campaigns.add_campaign: Add campaign
+campaigns.new_campaign: New campaign
+campaigns.campaign_list: Campaign list
+campaigns.edit_campaign: Edit campaign
+campaigns.archive_campaign: Archive campaign
+campaigns.show_campaign: Show campaign
+campaigns.clone_campaign: Clone campaign
+campaigns.kpis: KPIs
+campaigns.black_list_white_list: BlackList / WhiteList
+campaigns.more_data: More data
+campaigns.pause_campaign: Pause campaign
+campaigns.activate_campaign: Activate campaign
+campaigns.main_info: Main info
+campaigns.fixed_ranges: Fixed ranges
+
+targets: Targets
+targets.target_list: Target list
+targets.edit_targets: Edit targets
+targets.edit_target: Edit target
+targets.current_month: Current month
+targets.next_month: Next month
+
+cropper.popup.header.title: Update profile picture
+
+privacy_policy: Privacy policy
+
+countries.filter.placeholder: Countries filter
+
+fiscal_state.autonomous: Autonomous
+fiscal_state.company: Company
+
+exit_impersonation: Exit impersonation

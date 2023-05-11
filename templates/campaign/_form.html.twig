@@ -1,0 +1,135 @@
+<div class="panel panel-half panel-icon-header">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ form_title|default('campaigns.new_campaign'|trans) }}</h4>
+        <button type="button" class="toggle"></button>
+    </div>
+    <div class="panel-body">
+        {{ form_row(form.name) }}
+        {{ form_row(form.agency) }}
+        {% if is_edit == false %}
+            <div class="form-field{% if form_errors(form.agency) is not empty %} error{% endif %}">
+                {# {{ form_label(form.agency) }}
+                {{ form_widget(form.agency) }}
+                {{ form_errors(form.agency) }} #}
+                <button class="btn btn-add-gray btn-create-agency js-create-agency">{{ 'agencies.add_agency'|trans }}
+                    <span
+                            class="icon"></span></button>
+            </div>
+        {% endif %}
+        {{ form_row(form.advertiser) }}
+        {{ form_row(form.ssp) }}
+        {% if is_edit %}
+            {{ form_row(form.type) }}
+        {% else %}
+            <div class="only-lkqd js-only-lkqd">
+                {{ form_row(form.type) }}
+            </div>
+        {% endif %}
+        {{ form_row(form.dealId) }}
+        {% if is_edit %}
+            {{ form_row(form.dsp) }}
+        {% else %}
+            <div class="only-deal js-only-deal">
+                {{ form_row(form.dsp) }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+<div class="panel panel-half panel-icon-header">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ 'campaigns.kpis'|trans }}</h4>
+        <button type="button" class="toggle max"></button>
+    </div>
+    <div class="panel-body" style="display: none;">
+        {{ form_row(form.vtr) }}
+        {{ form_row(form.viewability) }}
+        {{ form_row(form.ctr) }}
+        {{ form_row(form.volume) }}
+    </div>
+</div>
+<div class="panel panel-half panel-icon-header js-expandable-panel">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ 'campaigns.fixed_ranges'|trans }}</h4>
+        <button type="button" class="toggle max"></button>
+    </div>
+    <div class="panel-body" style="display: none;">
+        <div class="display-flex range-fields">
+            {{ form_row(form.vtrFrom) }}
+            <div class="form-field{% if form_errors(form.vtrTo) is not empty %} error{% endif %}">
+                {{ form_widget(form.vtrTo) }}
+                {{ form_errors(form.vtrTo) }}
+            </div>
+        </div>
+        <div class="display-flex range-fields">
+            {{ form_row(form.viewabilityFrom) }}
+            <div class="form-field{% if form_errors(form.viewabilityTo) is not empty %} error{% endif %}">
+                {{ form_widget(form.viewabilityTo) }}
+                {{ form_errors(form.viewabilityTo) }}
+            </div>
+        </div>
+        <div class="display-flex range-fields">
+            {{ form_row(form.ctrFrom) }}
+            <div class="form-field{% if form_errors(form.ctrTo) is not empty %} error{% endif %}">
+                {{ form_widget(form.ctrTo) }}
+                {{ form_errors(form.ctrTo) }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-half panel-icon-header">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ 'campaigns.black_list_white_list'|trans }}</h4>
+        <button type="button" class="toggle max"></button>
+    </div>
+    <div class="panel-body" style="display: none;">
+        {{ form_row(form.listType) }}
+        {{ form_row(form.list) }}
+    </div>
+</div>
+<div class="panel panel-half panel-icon-header">
+    <div class="panel-header">
+        <h4><span class="icon edit"></span>{{ 'campaigns.more_data'|trans }}</h4>
+        <button type="button" class="toggle"></button>
+    </div>
+    <div class="panel-body">
+        {{ form_row(form.details) }}
+        {{ form_row(form.countries) }}
+        <div class="dependent-fields js-only-campaign">
+            {{ form_row(form.costType) }}
+        </div>
+        <div class="dependent-fields js-cpm">
+            {{ form_row(form.cpm) }}
+        </div>
+        <div class="dependent-fields js-cpv">
+            {{ form_row(form.cpv) }}
+        </div>
+        <div class="form-field {% if form_errors(form.startAt) is not empty %}error{% endif %} vue-datepicker-wrapper">
+            {{form_label(form.startAt)}}
+            <v-date-picker
+                :popover="{ placement: 'bottom', visibility: 'click' }"
+                :first-day-of-week="2"
+                :value="{% if form.vars.value.startAt %}new Date('{{form.vars.value.startAt | date('m-d-Y')}}'){% else %}null{% endif %}"
+                :masks="{ input: 'YYYY-MM-DD' }"
+            >
+                {{form_widget(form.startAt, {attr: {'placeholder': 'common.date_format' | trans, 'v-bind': 'inputProps', 'v-on': 'inputEvents', 'slot-scope': '{ inputProps, inputEvents, isDragging }', 'style': 'width: auto;'}})}}
+            </v-date-picker>
+            {{ form_errors(form.startAt) }}
+        </div>
+        <div class="form-field {% if form_errors(form.endAt) is not empty %}error{% endif %} vue-datepicker-wrapper">
+            {{form_label(form.endAt)}}
+            <v-date-picker
+                :popover="{ placement: 'bottom', visibility: 'click' }"
+                :first-day-of-week="2"
+                :value="{% if form.vars.value.endAt %}new Date('{{form.vars.value.endAt | date('m-d-Y')}}'){% else %}null{% endif %}"
+                :masks="{ input: 'YYYY-MM-DD' }"
+            >
+                {{form_widget(form.endAt, {attr: {'readonly': 'true', 'placeholder': 'common.date_format' | trans, 'v-bind': 'inputProps', 'v-on': 'inputEvents', 'slot-scope': '{ inputProps, inputEvents, isDragging }', 'style': 'width: auto;'}})}}
+            </v-date-picker>
+            {{ form_errors(form.endAt) }}
+        </div>
+        {{ form_row(form.rebate) }}
+        {{ form_row(form.status) }}
+        {{ include('_save_button.html.twig') }}
+    </div>
+</div>
+

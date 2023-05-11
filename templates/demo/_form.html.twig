@@ -1,0 +1,50 @@
+{{ form_start(form) }}
+
+{{ form_row(form.url_format) }}
+{{ form_row(form.url) }}
+<div class="form-field">
+	<label>{{ "demo.preview_url"|trans }}</label>
+	<span class="preview-url half" id="preview_demo_url"><span>
+</div>
+<div class="form-field">
+	<label></label>
+	<span class="btn btn-square flat-btn btn-blue half" id="btn-copy-form">{{ 'demo.copy'|trans }}</span>
+</div>
+<div class="form-field">
+	{{ form_label(form.video) }}
+	<input type="file" id="video_file" accept="video/mp4">
+	{{ form_widget(form.video) }}
+</div>
+<div class="form-field">
+	<label></label>
+	<video id="loadVideo" width="400" height="225" class="hidden" controls></video>
+</div>
+{{ form_row(form.format) }}
+<div class="form-field error">
+	<div class="switch-field">
+		{{ form_label(form.desktop) }}
+		<label for="desktop">
+			{{ form_widget(form.desktop,{ 'id': 'desktop' }) }}<span class="switch"></span><span class="toggle-switch"></span>
+		</label>
+	</div>
+	{{ form_errors(form.desktop) }}
+</div>
+<div class="desktop hidden form-field">
+	{{ form_row(form.width) }}
+	{{ form_row(form.height) }}
+</div>
+<div class="form-field error">
+	<div class="switch-field">
+		{{ form_label(form.mobile) }}
+		<label for="mobile">
+			{{ form_widget(form.mobile,{ 'id': 'mobile' }) }}<span class="switch"></span><span class="toggle-switch"></span>
+		</label>
+	</div>
+	{{ form_errors(form.mobile) }}
+</div>
+<div class="mobile hidden form-field">
+	{{ form_row(form.orientation) }}
+</div>
+{{ form_row(form.click_url) }}
+{{ include('_save_button.html.twig') }}
+{{ form_end(form) }}

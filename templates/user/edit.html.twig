@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'users-edit' %}
+{% block body_class 'users' %}
+{% block page_title 'users.edit_user'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('user_index') }}">{{ 'users'|trans }}</a>
+    <a href="{{ path('user_edit', {id: user.id}) }}">{{ user.name }}</a>
+    <span>{{ 'users.edit_user'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    <div class="panel panel-half panel-icon-header">
+        <div class="panel-header">
+            <h4><span class="icon edit"></span>{{ 'users.edit_user'|trans }}</h4>
+        </div>
+        <div class="panel-body">
+            {{ include('user/_form.html.twig', {'button_label': 'common.update'|trans}) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('userIndex') }}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% block campaigns_row %}
+    <div class="form-field campaigns-field {% if form_errors(form) is not empty %}error{% endif %}">
+        {{ form_label(form) }}
+        <div class="slide-panel form">
+            <button type="button" id="include"
+                    class="checkbox-button">{{ 'common.select'|trans }}</button>
+            <ul class="slide-menu-categories js-countries checkboxes tags">
+                <li class="js-search-item">
+                    <input class="search js-search-countries" type="text"
+                           placeholder="{{ 'common.filter'|trans }}">
+                </li>
+                {% for child in choices %}
+                    <li>
+                        {% set randomNumber = random() %}
+                        <input name="{{ full_name }}[]" id="incl_{{ randomNumber }}_{{ child.value }}" type="checkbox"
+                               value="{{ child.value }}" {% if child is selectedchoice(value) %}checked{% endif %}
+                               class="inputC">
+                        <label for="incl_{{ randomNumber }}_{{ child.value }}">
+                            <span class="js-country" title="cat{{ child.value }}">{{ child.label }}</span>
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}

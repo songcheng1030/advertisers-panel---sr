@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Form;
+
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class CountriesType extends AbstractType
+{
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'name' => 'countries',
+        ]);
+
+        $resolver->addAllowedTypes('name', 'string');
+    }
+
+    public function getParent()
+    {
+        return EntityType::class;
+    }
+}

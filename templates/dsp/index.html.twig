@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'dsp_index' %}
+{% block body_class 'dsps' %}
+{% block page_title 'dsps'|trans %}
+{% block page_subtitle 'dsps.dsp_list'|trans %}
+
+{% block extra_buttons %}
+    <a href="{{ path('dsp_new') }}" class="btn btn-square btn-add"><span
+                class="icon"></span>{{ 'dsps.add_dsp'|trans }}</a>
+{% endblock %}
+
+{% block breadcrumb %}
+    <a href="{{ path('advertiser_index') }}">{{ 'dsps'|trans }}</a>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-table">
+        <div class="panel-list panel-table flex-table">
+            <div class="panel-body">
+                <div class="table-container">
+                    <table class="js-dsps-table display">
+                        <thead>
+                        <tr>
+                            <th class="sortable">{{ 'common.name'|trans }}</th>
+                            <th>{{ 'common.options'|trans }}</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('dspIndex') }}
+{% endblock %}

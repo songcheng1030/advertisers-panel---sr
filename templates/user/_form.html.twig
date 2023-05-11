@@ -1,0 +1,24 @@
+{{ form_start(form) }}
+{% if loggedUser.isAdmin %}
+    {{ form_row(form.roles) }}
+    <div class="dependent-fields js-only-sales-manager">
+        {{ form_row(form.salesManagerHead) }}
+    </div>
+{% endif %}
+<div class="dependent-fields js-only-campaign-viewer">
+    {{ form_row(form.campaigns) }}
+</div>
+{{ form_row(form.username) }}
+{{ form_row(form.nick) }}
+{{ form_row(form.plainPassword.first) }}
+{{ form_row(form.plainPassword.second) }}
+{{ form_row(form.name) }}
+{{ form_row(form.lastName) }}
+{{ form_row(form.email) }}
+{{ form_row(form.locale) }}
+<div class="dependent-fields js-only-managers">
+    {{ form_row(form.isEmailNotificationEnabled) }}
+</div>
+{{ form_row(form._token) }}
+{{ include('_save_button.html.twig') }}
+{{ form_end(form) }}

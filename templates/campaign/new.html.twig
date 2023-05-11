@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'campaigns-add' %}
+{% block body_class 'campaigns' %}
+{% block page_title 'campaigns.add_campaign'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('campaign_index') }}">{{ 'campaigns'|trans }}</a>
+    <span>{{ 'campaigns.add_campaign'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    {{ form_start(form) }}
+    {{ include('campaign/_form.html.twig') }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('campaignIndex') }}
+{% endblock %}

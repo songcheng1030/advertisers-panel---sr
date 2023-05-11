@@ -1,0 +1,16 @@
+.targets {
+  .panel {
+    .form-field {
+      max-width: 100%;
+    }
+  }
+}
+.js-targets-table {
+  width: 100%;
+  td {
+    white-space: nowrap;
+    input {
+      width: 120px;
+    }
+  }
+}

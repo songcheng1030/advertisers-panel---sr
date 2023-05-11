@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'campaign_index' %}
+{% block body_class 'campaigns' %}
+{% block page_title 'campaigns'|trans %}
+{% block page_subtitle 'campaigns.campaign_list'|trans %}
+
+{% block extra_buttons %}
+    {% if app.user.isAdmin %}
+    <a href="{{ path('campaign_new') }}" class="btn btn-square btn-add"><span
+                class="icon"></span>{{ 'campaigns.add_campaign'|trans }}</a>
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <a href="{{ path('campaign_index') }}">{{ 'campaigns'|trans }}</a>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-table">
+        {{ include('form/seach.html.twig') }}
+        <div class="panel-list panel-table flex-table">
+            <div class="panel-body">
+                <div class="table-container">
+                    <table class="js-campaigns-table display" width="100%">
+                        <thead>
+                        <tr>
+                            <th class="sortable">{{ 'common.name'|trans }}</th>
+                            <th class="sortable">{{ 'common.deal_id'|trans }}</th>
+                            <th class="sortable">{{ 'common.agency'|trans }}</th>
+                            <th class="sortable">{{ 'common.status'|trans }}</th>
+                            <th>{{ 'common.options'|trans }}</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('campaignIndex') }}
+{% endblock %}

@@ -1,0 +1,40 @@
+.campaigns {
+  .form-field {
+    max-width: 100%;
+  }
+
+  .form-field {
+    .dropdown-menu {
+      &.advertiser,
+      &.dsp {
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  td.ellipsis-name-agency {
+    div {
+      width: 150px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  td .icon-small {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  @media screen and (max-width: 350px) {
+    td.ellipsis-name-agency {
+      div {
+        width: 110px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}

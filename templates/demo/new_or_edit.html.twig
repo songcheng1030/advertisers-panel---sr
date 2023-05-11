@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id ((isEdit)? 'demo.edit_demo':'demo-add')|trans  %}
+{% block body_class 'demos' %}
+{% block page_title ((isEdit)? 'demo.edit_demo':'demo.add_demo')|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('demo_index') }}">{{ 'demos'|trans }}</a>
+    <span>{{ ((isEdit)? 'demo.edit_demo':'demo.add_demo')|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    <div class="panel panel-demo panel-icon-header">
+        <div class="panel-header">
+            <h4><span class="icon edit"></span>{{ ((isEdit)? 'demo.edit_demo':'demo-add')|trans }}</h4>
+        </div>
+        <div class="panel-body">
+            {{ include('demo/_form.html.twig') }}
+        </div>
+    </div>
+
+<div id="snackbar">{{ 'demo.copied'|trans }}</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('demoIndex') }}
+{% endblock %}

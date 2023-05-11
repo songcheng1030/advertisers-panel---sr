@@ -1,0 +1,10 @@
+{% form_theme form 'fields.html.twig' %}
+<div class="popup-container js-add-agency-popup active">
+    <div class="popup-header">
+        <h4><span class="icon"></span>{{ 'agencies.new_agency'|trans }}</h4>
+        <a href="javascript:void(0)" class="close-btn"></a>
+    </div>
+    <div class="popup-body">
+        {{ include('agency/_create_form.html.twig') }}
+    </div>
+</div>

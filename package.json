@@ -1,0 +1,55 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.28.2",
+        "core-js": "^3.0.0",
+        "husky": "^4.2.1",
+        "lint-staged": "^10.0.7",
+        "node-sass": "^4.14.1",
+        "prettier": "^1.19.1",
+        "regenerator-runtime": "^0.13.2",
+        "sass-loader": "^7.0.1",
+        "vue-loader": "^15.8.3",
+        "vue-template-compiler": "^2.6.11",
+        "webpack-notifier": "^1.6.0",
+        "yaml-loader": "^0.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "bazinga-translator": "^3.0.0",
+        "bootstrap": "^4.4.1",
+        "bootstrap-vue": "^2.4.0",
+        "croppie": "^2.6.4",
+        "datatables.net": "^1.10.20",
+        "datatables.net-plugins": "^1.10.20",
+        "date-fns": "^2.9.0",
+        "jquery": "^3.5.1",
+        "jsdom": "^16.2.2",
+        "jsdom-global": "^3.0.2",
+        "mark.js": "^8.11.1",
+        "moment": "^2.24.0",
+        "v-calendar": "^1.0.1",
+        "vue": "^2.6.11",
+        "vue-clickaway": "^2.2.2",
+        "vue-server-renderer": "^2.6.11",
+        "vuedraggable": "^2.23.2",
+        "webpack-merge": "^4.2.2",
+        "webpack-node-externals": "^1.7.2"
+    },
+    "husky": {
+        "hooks": 
+        {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,vue,css,scss,html,md}": "prettier --write --end-of-line lf",
+        "*.php": "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --config=.php_cs.dist --using-cache false'"
+    }
+}

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'campaigns-show' %}
+{% block body_class 'campaigns' %}
+{% block page_title 'campaigns.show_campaign'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('campaign_index') }}">{{ 'campaigns'|trans }}</a>
+    <span>{{ 'campaigns.show_campaign'|trans }}</span>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-half panel-icon-header">
+        <div class="panel-body">
+            <div class="form-field">
+                <label for="campaign_name">{{ 'common.name'|trans }}</label>
+                <input id="campaign_name" disabled="disabled" type="text" value="{{ campaign.name }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_agency">{{ 'common.agency'|trans }}</label>
+                <input id="campaign_agency" disabled="disabled" type="text" value="{{ campaign.agency.name }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_advertiser">{{ 'common.advertiser.label'|trans }}</label>
+                <input id="campaign_advertiser" disabled="disabled" type="text" value="{{ campaign.advertiser.name }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_ssp">{{ 'common.ssp'|trans }}</label>
+                <input id="campaign_ssp" disabled="disabled" type="text" value="{{ campaign.ssp.name }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_type">{{ 'common.type'|trans }}</label>
+                <input id="campaign_type" disabled="disabled" type="text" value="{{ campaign.type }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_dealId">{{ 'common.deal_id.label'|trans }}</label>
+                <input id="campaign_dealId" disabled="disabled" type="text" value="{{ campaign.dealId }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_vtr">{{ 'common.vtr.label'|trans }}</label>
+                <input id="campaign_vtr" disabled="disabled" type="text" value="{{ campaign.vtr|default('NA') }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_viewability">{{ 'common.viewability.label'|trans }}</label>
+                <input id="campaign_viewability" disabled="disabled" type="text" value="{{ campaign.viewability|default('NA') }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_ctr">{{ 'common.ctr.label'|trans }}</label>
+                <input id="campaign_ctr" disabled="disabled" type="text" value="{{ campaign.ctr|default('NA') }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_volume">{{ 'common.volume.label'|trans }}</label>
+                <input id="campaign_volume" disabled="disabled" type="text" value="{{ campaign.volume|default('NA') }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_cpm">{{ 'common.cpm.label'|trans }}</label>
+                <input id="campaign_cpm" disabled="disabled" type="text" value="{{ campaign.cpm }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_start_at">{{ 'common.start_at.label'|trans }}</label>
+                <input id="campaign_start_at" disabled="disabled" type="text" value="{{ campaign.startAt ? campaign.startAt|date('d-m-Y') }}">
+            </div>
+            <div class="form-field">
+                <label for="campaign_rebate">{{ 'common.rebate.label'|trans }}</label>
+                <input id="campaign_rebate" disabled="disabled" type="text" value="{{ campaign.rebate }}">
+            </div>
+        </div>
+    </div>
+{% endblock %}

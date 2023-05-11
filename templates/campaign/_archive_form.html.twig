@@ -1,0 +1,5 @@
+<form method="post" style="display: inline-block;" action="{{ path('campaign_delete', {'id': campaign.id}) }}">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ campaign.id) }}">
+    <button class="btn btn-square flat-btn btn-blue js-button">{{ 'common.yes'|trans }}</button>
+</form>

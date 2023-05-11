@@ -1,0 +1,223 @@
+/* Header
+-------------------------------------------------------------- */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  height: $header;
+  background: $white;
+  color: $dark-blue;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 11px -3px rgba(0, 0, 0, 0.2);
+
+  @media #{$tablet} {
+    width: 100%;
+  }
+
+  .row-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $navbar + 1;
+    height: $header;
+    padding: 0 15px 0 20px;
+    border-right: 1px solid #edf0f2;
+    transition: 0.2s cubic-bezier(0.59, 0.26, 0.21, 0.9);
+    @media #{$tablet} {
+      .logo1 {
+        display: none;
+      }
+      /* display: none;*/
+    }
+  }
+
+  .burger {
+    position: relative;
+    width: 20px;
+    height: 12px;
+    cursor: pointer;
+
+    .line {
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: $dark-blue;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 5px;
+        width: 70%;
+      }
+
+      &:last-child {
+        top: 10px;
+        width: 90%;
+      }
+    }
+  }
+
+  .logo1 {
+    img {
+      height: 24px;
+      vertical-align: initial;
+    }
+
+    // @media #{$big-tablet}{
+    // 	display:none;
+    // }
+  }
+
+  .breadcrumb {
+    font-size: 0.95em;
+    margin-left: 23px;
+    text-transform: uppercase;
+    color: #2f3848;
+
+    a:after {
+      content: "";
+      margin: 0 6px 0 7px;
+      height: 8px;
+      width: 5px;
+      background: url(../img/caret-left.png) no-repeat center/contain;
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    a:last-child:after {
+      display: none;
+    }
+
+    &.single {
+      a:after {
+        display: none;
+      }
+    }
+
+    span {
+      color: #626e84;
+    }
+
+    @media #{$tablet} {
+      display: none;
+    }
+  }
+
+  .notif-bell {
+    position: static;
+    margin-left: auto;
+    margin-right: 15px;
+
+    @media #{$tablet} {
+      display: none;
+    }
+  }
+
+  .user {
+    position: static !important;
+    width: auto !important;
+    min-width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 25px !important;
+    padding: 7px 0 !important;
+    font-size: 0.8125em !important;
+    cursor: pointer;
+    @media #{$tablet} {
+      margin-left: auto !important;
+      margin-right: 15px !important;
+      margin-bottom: 0 !important;
+    }
+
+    .user-img {
+      display: inline-block;
+      background: $light-blue no-repeat center / cover;
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+
+    .impersonating {
+      border: 2px solid rgba(255, 0, 0, 0.5);
+    }
+
+    span {
+      margin-left: 10px;
+      @media #{$phone} {
+        font-size: 0;
+      }
+
+      &:after {
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+        background: url("../img/user-menu.png") no-repeat;
+        background-size: 100% auto;
+        margin: 0 0 2px 25px;
+        width: 4px;
+        height: 16px;
+        @media #{$phone} {
+          margin-left: 0px;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      top: 100%;
+      left: initial;
+      right: 10px;
+      width: 237.5px;
+
+      li {
+        a {
+          padding: 12px 20px 10px;
+
+          &:before {
+            display: inline-block;
+            content: "";
+            background: none no-repeat center / 100%;
+            width: 17px;
+            height: 17px;
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  body header .row-logo {
+    width: $navbarCollapsed + 1;
+    padding: 0;
+  }
+  body header .burger {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.navbar-collapse header {
+  .row-logo {
+    width: $navbarCollapsed + 1;
+    padding: 0;
+  }
+
+  .burger {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .logo1 {
+    display: none;
+  }
+}

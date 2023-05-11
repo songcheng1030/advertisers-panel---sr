@@ -1,0 +1,47 @@
+{% block form_row %}
+    <div class="form-field{% if form_errors(form) is not empty %} error{% endif %}">
+        {{ form_label(form) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
+
+{% block choice_widget %}
+    <div class="dropdown form">
+        <input type="hidden" name="{{ full_name }}"
+               id="{{ id }}" {% if value is not empty %}{% for child in choices %}{% if child is selectedchoice(value) %} value="{{ child.value }}"{% endif %}{% endfor %}{% endif %}>
+        <button type="button"{% if attr.disabled is defined %} disabled="disabled"{% endif %}>{% if value is not empty %}{% for child in choices %}{% if child is selectedchoice(value) %}{{ child.label|trans }}{% endif %}{% endfor %}{% else %}Seleccione...{% endif %}</button>
+        <ul class="dropdown-menu js_{{ id }} {{ name }}">
+            {% if name in ['advertiser', 'dsp'] %}
+                <li class="ajax-input">
+                    <input class="search js-create-{{ name }}-inline" type="text" placeholder="{{ 'common.enter_name_and_hit_create_to_create'|trans }}">
+                </li>
+            {% endif %}
+            {% for child in choices %}
+                <li{% if child is selectedchoice(value) %} class="selected"{% endif %}>
+                    <a href="#" data-value="{{ child.value }}">{{ child.label|trans }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block button_widget %}
+    <div class="form-field delete-manager-button">
+        {%- if label is empty -%}
+            {%- if label_format is not empty -%}
+                {% set label = label_format|replace({
+                    '%name%': name,
+                    '%id%': id,
+                }) %}
+            {%- elseif label is not same as(false) -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {%- endif -%}
+        <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) or label is same as(false) ? label : label|trans(label_translation_parameters, translation_domain) }}</button>
+    </div>
+{% endblock button_widget %}
+
+{% block integer_widget %}
+    <input type="number" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/> {% if name == 'rebate' %}%{% elseif name == 'goal' %}${% endif %}
+{% endblock %}

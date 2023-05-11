@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'agencies-add' %}
+{% block body_class 'agencies' %}
+{% block page_title 'agencies.add_agency'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('agency_index') }}">{{ 'agencies'|trans }}</a>
+    <span>{{ 'agencies.add_agency'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    {{ form_start(form) }}
+    {{ include('agency/_form.html.twig') }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('agencyIndex') }}
+{% endblock %}

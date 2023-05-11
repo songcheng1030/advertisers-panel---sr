@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'dsps-add' %}
+{% block body_class 'dsps' %}
+{% block page_title 'dsps.add_dsp'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('dsp_index') }}">{{ 'dsps'|trans }}</a>
+    <span>{{ 'dsps.add_dsp'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    <div class="panel panel-half panel-icon-header">
+        <div class="panel-header">
+            <h4><span class="icon edit"></span>{{ 'dsps.new_dsp'|trans }}</h4>
+        </div>
+        <div class="panel-body">
+            {{ include('dsp/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'agency' %}
+{% block page_title 'agencies'|trans %}
+{% block page_subtitle 'agencies.agency_list'|trans %}
+
+{% block extra_buttons %}
+    {% if app.user.isAdmin %}
+        <a href="{{ path('agency_new') }}" class="btn btn-square btn-add"><span
+                    class="icon"></span>{{ 'agencies.add_agency'|trans }}</a>
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <a href="{{ path('agency_index') }}">{{ 'agencies'|trans }}</a>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-table">
+        {{ include('form/seach.html.twig') }}
+        <div class="panel-list panel-table flex-table">
+            <div class="panel-body">
+                <div class="table-container">
+                    <table class="js-agencies-table display">
+                        <thead>
+                        <tr>
+                            <th class="sortable">{{ 'common.name'|trans }}</th>
+                            <th class="sortable">{{ 'common.type'|trans }}</th>
+                            <th class="sortable">{{ 'common.sales_manager'|trans }}</th>
+                            <th class="sortable">{{ 'common.country'|trans }}</th>
+                            <th>{{ 'common.options'|trans }}</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('agencyIndex') }}
+{% endblock %}

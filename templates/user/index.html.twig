@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'users_index' %}
+{% block body_class 'users' %}
+{% block page_title 'users.user_list'|trans %}
+
+{% block extra_buttons %}
+    <a href="{{ path('user_new') }}" class="btn btn-square btn-add"><span
+                class="icon"></span>{{ 'users.create_user'|trans }}</a>
+{% endblock %}
+
+{% block breadcrumb %}
+    <a href="{{ path('user_index') }}">{{ 'users'|trans }}</a>
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-table">
+        {{ include('form/seach.html.twig') }}
+        <div class="panel-list panel-table flex-table">
+            <div class="panel-body">
+                <div class="table-container table-user-managers">
+                    <table class="display js-user-table">
+                        <thead>
+                        <tr>
+                            <th class="sortable">{{ 'common.username'|trans }}</th>
+                            <th class="sortable">{{ 'common.name'|trans }}</th>
+                            <th class="sortable">{{ 'common.email'|trans }}</th>
+                            <th class="sortable">{{ 'common.role'|trans }}</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('userIndex') }}
+{% endblock %}

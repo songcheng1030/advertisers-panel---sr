@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'dsps-edit' %}
+{% block body_class 'dsps' %}
+{% block page_title 'dsps.edit_dsp'|trans %}
+
+{% block breadcrumb %}
+    <a href="{{ path('dsp_index') }}">{{ 'dsps'|trans }}</a>
+    <a href="{{ path('dsp_edit', {id: dsp.id}) }}">{{ dsp.name }}</a>
+    <span>{{ 'dsps.edit_dsp'|trans }}</span>
+{% endblock %}
+
+{% form_theme form 'fields.html.twig' %}
+
+{% block main %}
+    <div class="panel panel-half panel-icon-header">
+        <div class="panel-header">
+            <h4><span class="icon edit"></span>{{ 'dsps.edit_dsp'|trans }}</h4>
+        </div>
+        <div class="panel-body">
+            {{ include('dsp/_form.html.twig', {'button_label': 'common.update'|trans}) }}
+        </div>
+    </div>
+{% endblock %}

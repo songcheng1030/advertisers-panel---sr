@@ -1,0 +1,25 @@
+common:
+  field_must_be_completed: Field must be completed
+  field_must_be_selected: Field must be selected
+  field_does_not_contain_valid_url: Field does not contain a valid url
+  site_can_not_be_accessed: Site can not be accessed
+  field_already_exist: Field already exist
+  password_not_match: Password and confirmation does not match
+  field_min_message: field must be at least {{ limit }} characters
+  field_max_message: field must be less than {{ limit }} characters
+  field_exact_message: field must be exactly {{ limit }} characters
+  please_upload_valid_files: Please upload valid TXT, CSV, XLS files
+  must_be_unique_by_ssp: field must be unique by SSP
+  date_must_be_after_the_current_date: Date must be after or equal to the current date
+  date_must_be_after_start_date: Date must be after or equal to the start date
+  field_more_or_equal_one_message: Field must be more than or equal than 1
+  field_less_or_equal_one_hundred_message: Field must be less or equal than 100
+
+  supply_source_desktop_is_null: Supply source desktop is null
+  supply_source_mobile_is_null: Supply source mobile is null
+  demo_validation_desk_mob: One of the fields must be active
+  demo_url_is_null: Field is required
+  demo_validation_click_url_invalid: enter a valid URL
+
+users:
+  password.invalid_message: Password and repeat password must match
